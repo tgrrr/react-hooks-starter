@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import logo from '../../assets/images/logo.svg';
 
-class App extends Component {
-  render() {
-    return (
+const App = () => {
+  return (
+    <div data-cy='App'>
       <AppStyled>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -21,9 +21,9 @@ class App extends Component {
           </a>
         </header>
       </AppStyled>
-    );
-  }
-}
+      </div>
+  );
+};
 
 const AppStyled = styled.div`
   .App {
