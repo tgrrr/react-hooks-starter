@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 import logo from '../../assets/images/logo.svg';
 
 const App = () => {
   return (
-    <div data-cy='App'>
+    <ErrorBoundary componentName='App'>
       <AppStyled>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -21,7 +22,7 @@ const App = () => {
           </a>
         </header>
       </AppStyled>
-      </div>
+    </ErrorBoundary>
   );
 };
 
