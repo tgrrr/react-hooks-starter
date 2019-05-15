@@ -29,3 +29,5 @@ cypress/integration/examples
 example.json
 cypress/screenshotsFolder
 cypress/videosFolder
+react-hooks-starter.code-workspace
+launch.json

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
+import ErrorBoundary from '../../common/ErrorBoundary/ErrorBoundary'
 import logo from '../../assets/images/logo.svg';
 
 const App = () => {
