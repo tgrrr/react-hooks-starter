@@ -1,68 +1,91 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting started
 
-## Available Scripts
+## Install
 
-In the project directory, you can run:
+```js
+git clone https://github.com/tgrrr/react-hooks-starter
+cd react-hooks-starter
+yarn
+```
 
-### `npm start`
+## Development:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`yarn start` or `yarn watch`
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Runs the app in the development mode at
+[http://localhost:3000](http://localhost:3000)
 
-### `npm test`
+## Tests
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `yarn test` - tests with [Cypress](http://Cypress.io)
+- `yarn run cypress:open` - Opens the interactive cypress tester
 
-### `npm run build`
+[See example recipes](https://github.com/cypress-io/cypress-example-recipes)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `yarn run cypress:run`
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Run cypress tests in terminal
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Deploy TODO:
 
-### `npm run eject`
+- `yarn run build` for production
+- [Deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Reference
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+- [Making a Progressive Web App](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## And a few added extras:
 
-## Learn More
+TODO:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Data and State
+- [ ] [axios]
+- [ ] [react-hooks-global-state]
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Getting around
+- [ ] [history]
+- [ ] [react-router]
 
-### Code Splitting
+### Styles
+- [ ] [@material-ui/core]
+- [ ] [styled-components]
+- [ ] [styled-system]
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Tests
+- [x] [Cypress]
+- [ ] [raven-js]
+- [ ] [rollbar]
 
-### Analyzing the Bundle Size
+### Debugging
+- [ ] [eslint]
+- [x] [prop-types]
+- [ ] [react-fix-it]
+- [ ] [why-did-you-update]
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Useful
+- [ ] [react-notifications-component]
+- [ ] [uuid]
 
-### Making a Progressive Web App
+[axios]: https://www.npmjs.com/package/axios
+[react-hooks-global-state]: https://www.npmjs.com/package/react-hooks-global-state
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+[history]: https://www.npmjs.com/package/history
+[react-router]: https://www.npmjs.com/package/react-router
 
-### Advanced Configuration
+[@material-ui/core]: https://www.npmjs.com/package/@material-ui/core
+[styled-components]: https://www.npmjs.com/package/styled-components
+[styled-system]: https://www.npmjs.com/package/styled-system
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+[raven-js]: https://www.npmjs.com/package/raven-js
+[rollbar]: https://www.npmjs.com/package/rollbar
 
-### Deployment
+[eslint]: https://www.npmjs.com/package/eslint
+[prop-types]: https://www.npmjs.com/package/prop-types
+[react-fix-it]: https://www.npmjs.com/package/react-fix-it
+[why-did-you-update]: https://www.npmjs.com/package/why-did-you-update
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[react-notifications-component]: https://www.npmjs.com/package/react-notifications-component
+[uuid]: https://www.npmjs.com/package/uuid

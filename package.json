@@ -14,11 +14,12 @@
     "styled-system": "^4.1.0"
   },
   "scripts": {
-    "cy:open": "cypress open",
-    "cy:run": "cypress run",
+    "cypress:run": "./node_modules/.bin/cypress run",
+    "cypress:open": "./node_modules/.bin/cypress open",
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test"
+    "watch": "react-scripts start",
+    "test": "npm run cypress:run",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,6 +36,7 @@
     "cypress-dark": "^1.7.11",
     "cypress-eslint-preprocessor": "^1.2.2",
     "cypress-react-unit-test": "^2.4.1",
-    "cypress-testing-library": "^2.4.0"
+    "cypress-testing-library": "^2.4.0",
+    "react-testing-library": "^7.0.0"
   }
 }
