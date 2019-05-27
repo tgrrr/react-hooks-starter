@@ -27,7 +27,7 @@ class ErrorBoundary extends PureComponent {
     return (
       (process.env.NODE_ENV !== 'development' && hasError)
         ? (
-          <div data-cy={componentName} {...rest}>
+          <div data-id={componentName} {...rest}>
             <h4>
               {componentName && `Component: ${componentName} disabled`}
             </h4>
@@ -48,7 +48,7 @@ class ErrorBoundary extends PureComponent {
             </div>
           </div>
         )
-        : <div data-cy={componentName} {...rest}>
+        : <div data-id={componentName} {...rest}>
             {children}
           </div>
     );

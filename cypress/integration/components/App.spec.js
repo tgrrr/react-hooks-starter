@@ -11,16 +11,16 @@ describe('App loads without crashing', () => {
   })
   it('App, header & footer load without crashing', () => {
   cy.visit('/')
-    cy.get('[data-cy=Home] > div').should('contain', 'Home')
+    cy.get('[data-id=Home] > div').should('contain', 'Home')
     cy.log('Header loads')
-    cy.get('[data-cy=Header] > div').should('contain', 'Header')
+    cy.get('[data-id=Header] > div').should('contain', 'Header')
     cy.log('Footer loads')
-    cy.get('[data-cy=Footer] > div').should('contain', 'Footer')
+    cy.get('[data-id=Footer] > div').should('contain', 'Footer')
   })
 
   it('Navigates to login when we click login button', () => {
-    cy.get('[data-cy=Login__button]').click()
-    cy.get('[data-cy=Login] > div').should('contain', 'Login Page')
+    cy.get('[data-id=Login__button]').click()
+    cy.get('[data-id=Login] > div').should('contain', 'Login Page')
   })
 })
 /* eslint-enable no-undef */

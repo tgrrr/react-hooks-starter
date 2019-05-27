@@ -7,8 +7,8 @@ const Home = () => (
   <ErrorBoundary componentName='Home'>
     <HomeStyled>
       <>
-        Home
-        <Link to='login'><button data-cy='Login__button'>Login Button</button></Link>
+        Home <br />
+        <Link to='login'><button data-id='Login__button'>Login Button</button></Link>
       </>
     </HomeStyled>
   </ErrorBoundary>
