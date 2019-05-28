@@ -1,12 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ErrorBoundary from '../../common/ErrorBoundary/ErrorBoundary'
 import Login from './Login'
 
 const LoginContainer = () => {
-  // TODO: add state here
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+
   return (
     <ErrorBoundary componentName='LoginContainer'>
-      <Login />
+      <Login 
+        email={email}
+        password={password}
+        successMessage={successMessage}
+        setEmail={setEmail}
+        setPassword={setPassword}
+        setSuccessMessage={setSuccessMessage}
+      />
     </ErrorBoundary>
   );
 };
