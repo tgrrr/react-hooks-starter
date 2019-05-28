@@ -1,21 +1,22 @@
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Button, Form, Input } from '../../common/ui/ui';
 import styled from 'styled-components';
 import ErrorBoundary from '../../common/ErrorBoundary/ErrorBoundary'
 import * as Yup from 'yup';
 
 const Login = ({
-  email, 
+  email,
   password,
-  onSubmit,
-  successMessage, 
+  isSubmitting,
+  handleSubmit,
+  successMessage,
   }) => {
 
   const SignupSchema = Yup.object().shape({
-    email: Yup.string()
+    Login__email: Yup.string()
       .email('Invalid email')
       .required('Required'),
-    password: Yup.string()
+    Login__password: Yup.string()
       .min(2, 'Too Short!')
       .max(50, 'Too Long!')
       .required('Required'),
@@ -24,50 +25,40 @@ const Login = ({
   return (
     <ErrorBoundary componentName='Login'>
       <LoginStyled>
-        Login Page
+        <h1>Login Page</h1>
 
-        <Formik
-          initialValues={{
-            email,
-            password,
-          }}
-          onSubmit={onSubmit}
+        <Form 
+          onSubmit={handleSubmit}
           validationSchema={SignupSchema}
+          initialValues={{ 
+            Login__email: email, 
+            Login__password: password
+          }}
+          isSubmitting
         >
-          {({ 
-            isSubmitting,
-          }) => (
-            <Form>
-              <Field
-                data-id='Login__email'
-                label='email@address.com'
-                name="email"
-                placeholder='email@address.com'
-              />
-              <br />
-              <ErrorMessage name="email" className="error" component="div" data-id='Login__email--error' />
-              <br />
-              <Field
-                data-id='Login__password'
-                label='password'
-                name='password'
-                placeholder='password'
-                type='password'
-              />
-              <br />
-              <ErrorMessage name="password" className="error" component="div" data-id='Login__password--error' />  
-              <br />
-              <button 
-                data-id='Login__submit'
-                disabled={isSubmitting}
-                type='submit'
-              >
-                Login
-              </button>
-            </Form>
-          )}
-        </Formik>
+          <Input
+            label='email@address.com'
+            name='Login__email'
+            placeholder='email@address.com'
+          />
+
+          <Input
+            label='password'
+            name='Login__password'
+            placeholder='password'
+            type='password'
+          />
+
+          <Button 
+            dataId='Login__submit'
+            disabled={isSubmitting}
+            type='submit'
+          >
+            Login
+          </Button>
+        </Form>
         {successMessage && <div data-id='Login__successMessage'>{successMessage}</div>}
+
       </LoginStyled>
     </ErrorBoundary>
   );
@@ -75,9 +66,9 @@ const Login = ({
 
 const LoginStyled = styled.div`
   .Login {
+    font-size: 12px;
   }
   .error {
-    font-size: 12px;
     color: red;
   }
 `;

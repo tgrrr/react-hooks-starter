@@ -18,7 +18,10 @@ const AppStyled = styled.div`
   background-color: #282c34;
   min-height: 100vh;
   text-align: center;
-  font-size: calc(10px + 2vmin);
+  h1 {
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
 }
 `;
 

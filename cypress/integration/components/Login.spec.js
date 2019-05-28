@@ -22,21 +22,21 @@ describe('Test Login UI unit Tests', () => {
     cy.log('no email entered');
     cy.wait(500) // necessary if button has no width https://github.com/cypress-io/cypress/issues/695
     cy.get('button[data-id=Login__submit]').click();
-    cy.get('[data-id=Login__email--error]')
+    cy.get('[dataid="Login__email--error"]')
       .contains('Required')
 
     cy.log('error in email input')
     cy.get('[data-id=Login__email]').type('testemail.com')
 
     cy.get('button[data-id=Login__submit]').click();
-    cy.get('[data-id=Login__email--error]')
+    cy.get('[dataid="Login__email--error"]')
       .contains('Invalid email')
   })
 
   it('Test password errors', () => {
     cy.log('no password entered');
     cy.get('button[data-id=Login__submit]').click();
-    cy.get('[data-id="Login__password--error"]')
+    cy.get('[dataid = "Login__password--error"]')
       .contains('Required')
   })
 
