@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import 'cypress-react-unit-test'
 import React from 'react'
-import Login from '../../../src/pages/Login/Login.js'
+import Login from '../../../src/components/Login/Login.js'
 
 // NOTE: These are tests for Login UI, not for testing authentication
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeContainer from '../pages/Home/HomeContainer';
-import LoginContainer from '../pages/Login/LoginContainer';
+import LoginContainer from '../components/Login/LoginContainer';
 
 const routes = [
   {
