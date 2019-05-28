@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import styled from 'styled-components';
 import ErrorBoundary from '../../common/ErrorBoundary/ErrorBoundary'
+import * as Yup from 'yup';
 
 const Login = ({
   email, 
@@ -9,23 +10,15 @@ const Login = ({
   successMessage, 
   setSuccessMessage}) => {
 
-  function validateEmail(value) {
-    let error;
-    if (!value) {
-      error = 'Required';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-      error = 'Invalid email address';
-    }
-    return error;
-  }
-
-  function validatePassword(value) {
-    let error;
-    if (!value) {
-      error = 'Required';
-    }
-    return error;
-  }
+  const SignupSchema = Yup.object().shape({
+    email: Yup.string()
+      .email('Invalid email')
+      .required('Required'),
+    password: Yup.string()
+      .min(2, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Required'),
+  });
 
   const onSubmit = (values, { setSubmitting }) => {
     setTimeout(() => {
@@ -45,6 +38,7 @@ const Login = ({
             password,
           }}
           onSubmit={onSubmit}
+          validationSchema={SignupSchema}
         >
           {({ 
             isSubmitting,
@@ -55,7 +49,6 @@ const Login = ({
                 label='email@address.com'
                 name="email"
                 placeholder='email@address.com'
-                validate={validateEmail} 
               />
               <br />
               <ErrorMessage name="email" className="error" component="div" data-id='Login__email--error' />
@@ -66,7 +59,6 @@ const Login = ({
                 name='password'
                 placeholder='password'
                 type='password'
-                validate={validatePassword}
               />
               <br />
               <ErrorMessage name="password" className="error" component="div" data-id='Login__password--error' />  
