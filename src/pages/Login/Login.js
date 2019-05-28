@@ -6,9 +6,10 @@ import * as Yup from 'yup';
 
 const Login = ({
   email, 
-  password, 
+  password,
+  onSubmit,
   successMessage, 
-  setSuccessMessage}) => {
+  }) => {
 
   const SignupSchema = Yup.object().shape({
     email: Yup.string()
@@ -19,13 +20,6 @@ const Login = ({
       .max(50, 'Too Long!')
       .required('Required'),
   });
-
-  const onSubmit = (values, { setSubmitting }) => {
-    setTimeout(() => {
-      setSuccessMessage(`email: ${values.email} password: {obscured}`)
-      setSubmitting(false);
-    }, 400);
-  }
 
   return (
     <ErrorBoundary componentName='Login'>

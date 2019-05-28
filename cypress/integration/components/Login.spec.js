@@ -17,19 +17,20 @@ describe('Test Login UI unit Tests', () => {
     cy.get('[data-id=Login] > div').should('contain', 'Login Page')
   })
 
+  // TODO: update this to touched, rather than submitted test. Both?
   it('Test email field errors', () => {
     cy.log('no email entered');
-    // cy.wait(500) // necessary if button has no width https://github.com/cypress-io/cypress/issues/695
+    cy.wait(500) // necessary if button has no width https://github.com/cypress-io/cypress/issues/695
     cy.get('button[data-id=Login__submit]').click();
     cy.get('[data-id=Login__email--error]')
-    .contains('Required')
+      .contains('Required')
 
     cy.log('error in email input')
     cy.get('[data-id=Login__email]').type('testemail.com')
 
     cy.get('button[data-id=Login__submit]').click();
     cy.get('[data-id=Login__email--error]')
-    .contains('Invalid email address')
+      .contains('Invalid email')
   })
 
   it('Test password errors', () => {
@@ -46,7 +47,6 @@ describe('Test Login UI unit Tests', () => {
     cy.log('Input password')
     cy.get('[data-id=Login__password]').type('1234')
     cy.get('button[data-id=Login__submit]').click();
-    // cy.get('[data-id=Login__email--error]').contains('Invalid email address');
   });
 
 
