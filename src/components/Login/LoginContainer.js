@@ -9,7 +9,6 @@ const LoginContainer = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (values, { setSubmitting }) => {
-    console.log('values', values);
     setIsSubmitting(true);
     setEmail(values.Login__email)
     setPassword(values.Login__password)

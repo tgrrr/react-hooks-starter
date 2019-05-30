@@ -1,6 +1,8 @@
 import React from 'react';
 import { Field } from 'formik';
-import { ErrorMessage } from '../../ui';
+import { TextField } from 'formik-material-ui';
+
+const handleChange = event => console.log({event});
 
 const Input = ({
     className,
@@ -18,16 +20,10 @@ const Input = ({
       name={name}
       placeholder={placeholder}
       type={type}
+      component={TextField}
+      onChange={event => handleChange(event)}
       {...rest}
     />
-    <br />
-      <ErrorMessage 
-        name={name} 
-        className={`error ${name}--error`} 
-        component='div' 
-        dataId={`${name}--error`} 
-      />
-    <br />
   </div>
 );
 

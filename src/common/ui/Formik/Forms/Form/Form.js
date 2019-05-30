@@ -1,5 +1,5 @@
 import React from 'react';
-import ErrorBoundary from '../../../ErrorBoundary/ErrorBoundary'
+import ErrorBoundary from '../../../../ErrorBoundary/ErrorBoundary'
 import { Formik, Form as FormikForm } from 'formik';
 
 const Form = ({
@@ -15,14 +15,12 @@ const Form = ({
         onSubmit={onSubmit}
         validationSchema={validationSchema}
         {...rest}
+        render={({ isSubmitting, setFieldValue, submitForm, values, }) => (
+          <FormikForm>
+            {children}
+          </FormikForm>
+        )}
       >
-        {({
-          isSubmitting,
-        }) => (
-        <FormikForm>
-          {children}
-        </FormikForm>
-      )}
     </Formik>
   </ErrorBoundary >
 );

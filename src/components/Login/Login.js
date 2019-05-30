@@ -1,8 +1,33 @@
 import React from 'react';
-import { Button, Form, Input } from '../../common/ui/ui';
+import { 
+  Button, 
+  FormikDropdown,
+  FormikForm, 
+  FormikInput, 
+  FormikToggle, 
+  } from '../../common/ui/ui';
 import styled from 'styled-components';
 import ErrorBoundary from '../../common/ErrorBoundary/ErrorBoundary'
 import * as Yup from 'yup';
+
+const ranges = [
+  {
+    value: 'none',
+    label: 'None',
+  },
+  {
+    value: '0-20',
+    label: '0 to 20',
+  },
+  {
+    value: '21-50',
+    label: '21 to 50',
+  },
+  {
+    value: '51-100',
+    label: '51 to 100',
+  },
+];
 
 const Login = ({
   email,
@@ -26,29 +51,37 @@ const Login = ({
     <ErrorBoundary componentName='Login'>
       <LoginStyled>
         <h1>Login Page</h1>
-
-        <Form 
+        <FormikForm 
           onSubmit={handleSubmit}
           validationSchema={SignupSchema}
           initialValues={{ 
             Login__email: email, 
-            Login__password: password
+            Login__password: password,
+            rememberMe: true,
+            foo: 'none',
           }}
+
           isSubmitting
         >
-          <Input
+
+          <FormikInput
             label='email@address.com'
             name='Login__email'
             placeholder='email@address.com'
           />
 
-          <Input
+          <FormikInput
             label='password'
             name='Login__password'
             placeholder='password'
             type='password'
           />
-
+          <br />
+          <FormikToggle
+            label='Remember me on this computer?'
+            name='rememberMe'
+          />
+          <br />
           <Button 
             dataId='Login__submit'
             disabled={isSubmitting}
@@ -56,7 +89,7 @@ const Login = ({
           >
             Login
           </Button>
-        </Form>
+        </FormikForm>
         {successMessage && <div data-id='Login__successMessage'>{successMessage}</div>}
 
       </LoginStyled>

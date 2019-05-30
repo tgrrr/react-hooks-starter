@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import { Button as MaterialButton } from '@material-ui/core';
 
 const Button = ({
   children,
@@ -13,7 +14,7 @@ const Button = ({
   ...rest,
   }) => (
     <div className='buttonWrapper'>
-      <button
+      <MaterialButton
         className={className}
         color={color}
         data-id={dataId}
@@ -27,7 +28,7 @@ const Button = ({
         <>
           {children}
         </>
-      </button>
+      </MaterialButton>
     </div>
   );
 
