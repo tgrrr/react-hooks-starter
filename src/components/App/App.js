@@ -15,7 +15,7 @@ const App = () =>
   </ErrorBoundary>
 
 const AppStyled = styled.div`
-  background-color: #282c34;
+  // background-color: #282c34;
   min-height: 100vh;
   text-align: center;
   font-size: calc(10px + 2vmin);

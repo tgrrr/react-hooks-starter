@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import propTypes from 'prop-types';
-import Raven from 'raven-js';
+import Raven from 'raven-js'; // sentry
 // import fixIt, { options } from 'react-fix-it';
 
 // settings for fixIt
@@ -27,7 +27,7 @@ class ErrorBoundary extends PureComponent {
     return (
       (process.env.NODE_ENV !== 'development' && hasError)
         ? (
-          <div data-cy={componentName} {...rest}>
+          <div data-testid={componentName} {...rest}>
             <h4>
               {componentName && `Component: ${componentName} disabled`}
             </h4>
@@ -42,13 +42,12 @@ class ErrorBoundary extends PureComponent {
                     you can click here
                   </button>
                   to fill out a report.
-
                 </p>
               </div>
             </div>
           </div>
         )
-        : <div data-cy={componentName} {...rest}>
+        : <div data-testid={componentName} {...rest}>
             {children}
           </div>
     );

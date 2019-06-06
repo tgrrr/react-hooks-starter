@@ -11,7 +11,7 @@ const Main = () =>
   </ErrorBoundary>
 
 const MainStyled = styled.div`
-    background-color: black;
+    // background-color: black;
     height: 80vh;
     display: flex;
     flex-direction: column;

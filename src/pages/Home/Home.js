@@ -2,13 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import ErrorBoundary from '../../common/ErrorBoundary/ErrorBoundary'
 import Link from '../../common/navigation/Link/Link'
+import { Input, Button } from '../../common/ui/ui';
 
 const Home = () => (
   <ErrorBoundary componentName='Home'>
     <HomeStyled>
       <>
-        Home
-        <Link to='login'><button data-cy='Login__button'>Login Button</button></Link>
+        <h1>Home</h1>
+        <Input name="title" value="" placeholder="boop" fullWidth />
+        <Link to='login'><Button data-testid='Header__login--button'>Login Button</Button></Link>
       </>
     </HomeStyled>
   </ErrorBoundary>
