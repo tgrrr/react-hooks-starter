@@ -1,3 +1,47 @@
+
+https://hub.docker.com/repository/docker/tgrrr/cra-docker
+
+### Getting Started
+
+[install `yarn`](https://yarnpkg.com/lang/en/docs/install)
+
+```bash
+yarn run start
+```
+
+```bash
+yarn run setup
+```
+
+<!-- docker container ls -a -->
+<!-- docker container rm tgrrr/cra-docker -->
+
+- How to build
+
+```bash
+docker build . -t tgrrr/cra-docker
+```
+
+### How to run with Docker
+
+- Pull `create-react-app` from `docker`
+
+```bash
+docker pull tgrrr/cra-docker
+docker run -p 8080:80 tgrrr/cra-docker
+```
+
+**Note:** including `-p 8080:80` lets us use `localhost:8080`, rather than assigning a random port
+
+### How to run with `yarn`
+
+```
+yarn start
+```
+
+---
+
+
 ## Getting started
 
 ## Install
