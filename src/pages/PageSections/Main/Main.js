@@ -1,14 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
+import {
+  Route,
+} from 'react-router-dom';
 import ErrorBoundary from '../../../common/ErrorBoundary/ErrorBoundary';
-import Routes from '../../../common/navigation/Routes/Routes';
+import routes from '../../../config/routes';
 
-const Main = () =>
+const Main = () => (
   <ErrorBoundary componentName='Main'>
     <MainStyled>
-      <Routes />
+      <main>
+        {routes.map((route, index) => (
+          <Route
+            component={route.main}
+            exact={route.exact}
+            key={index}
+            path={route.path}
+          />
+        ))}
+      </main>
     </MainStyled>
   </ErrorBoundary>
+);
 
 const MainStyled = styled.div`
   align-items: center;

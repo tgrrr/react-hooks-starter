@@ -2,11 +2,14 @@ import React from 'react';
 import HomeContainer from '../pages/Home/HomeContainer';
 import LoginContainer from '../pages/Login/LoginContainer';
 
+/* eslint-disable react/display-name */
 const routes = [
   {
     path: '/',
     exact: true,
     main: () => <HomeContainer />,
+    navbar: () => <div>home!</div>,
+
     text: 'Home',
     private: false,
   },
@@ -14,15 +17,20 @@ const routes = [
     path: '/home',
     // exact: true,
     main: () => <HomeContainer />,
+    navbar: () => <div>Home Page</div>,
+
     text: 'Home',
     private: false,
   },
   {
     path: '/login',
     main: () => <LoginContainer />,
+    navbar: () => <div>Login</div>,
+
     text: 'Login',
     private: false,
   },
 ];
+/* eslint-enable react/display-name */
 
 export default routes;

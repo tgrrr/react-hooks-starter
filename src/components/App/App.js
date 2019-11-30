@@ -1,20 +1,20 @@
 import React from 'react';
-import { Router } from 'react-router-dom';
 import styled from 'styled-components';
-import history from '../../common/navigation/history'
-import ErrorBoundary from '../../common/ErrorBoundary/ErrorBoundary'
-import PageSections from '../../pages/PageSections/PageSections'
+import ErrorBoundary from '../../common/ErrorBoundary/ErrorBoundary';
+import Routes from '../../pages/navigation/Routes/Routes';
+import PageSections from '../../pages/PageSections/PageSections';
 
-const App = () =>
+const App = () => (
   <ErrorBoundary componentName='App'>
-    <Router history={history}>
-      <AppStyled>
+    <PageStyled>
+      <Routes>
         <PageSections />
-      </AppStyled>
-    </Router>
+      </Routes>
+    </PageStyled>
   </ErrorBoundary>
+);
 
-const AppStyled = styled.div`
+const PageStyled = styled.div`
   background-color: #282c34;
   min-height: 100vh;
   text-align: center;
