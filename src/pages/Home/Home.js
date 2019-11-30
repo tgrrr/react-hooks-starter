@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import ErrorBoundary from '../../common/ErrorBoundary/ErrorBoundary'
-import Link from '../../common/navigation/Link/Link'
+import ErrorBoundary from '../../common/ErrorBoundary/ErrorBoundary';
+import Link from '../navigation/Link/Link';
 
 const Home = () => (
   <ErrorBoundary componentName='Home'>

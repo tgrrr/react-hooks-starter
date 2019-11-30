@@ -11,18 +11,17 @@ const Main = () =>
   </ErrorBoundary>
 
 const MainStyled = styled.div`
-    background-color: black;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
+  align-items: center;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: center;
 
-    .Main__link {
-      color: #61dafb;
-    }
-
+  .Main__link {
+    color: #61dafb;
+  }
 `;
 
 export default Main;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ErrorBoundary from '../../../common/ErrorBoundary/ErrorBoundary'
+import ErrorBoundary from '../../../common/ErrorBoundary/ErrorBoundary';
 
 const Header = () => (
   <ErrorBoundary componentName='Header'>

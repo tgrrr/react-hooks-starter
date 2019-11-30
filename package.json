@@ -3,34 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/cypress": "^5.0.2",
-    "history": "4.10.1",
-    "prop-types": "15.7.2",
-    "raven-js": "3.27.2",
+    "history": "^4.10.1",
+    "prop-types": "^15.7.2",
+    "raven-js": "^3.27.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-router-dom": "5.1.2",
-    "react-router-hash-link": "1.2.2",
-    "react-scripts": "2.1.8",
-    "styled-components": "4.4.1",
-    "styled-system": "4.2.4"
+    "react-router-dom": "^5.1.2",
+    "react-router-hash-link": "^1.2.2",
+    "react-scripts": "^3.2.0",
+    "styled-components": "^4.4.1",
+    "styled-system": "^5.1.2"
   },
   "scripts": {
     "cypress:run": "./node_modules/.bin/cypress run",
     "cypress:open": "./node_modules/.bin/cypress open",
-
+    "deploy:test": "yarn build && netlify deploy --prod",
+    "deploy": "netlify deploy",
     "docker:build": "docker build . -t tgrrr/cra-docker",
     "docker:publish": "docker image push $npm_package_config_imageRepo:$npm_package_version",
     "docker:pull": "docker pull tgrrr/cra-docker:latest",
     "predocker:run": "echo \"\\x1b[104m\\x1b[97m\n[ you can now open this in your browser at localhost:8080 ]\n\\x1b[0m\"",
     "docker:run": "docker run -p 8080:80 tgrrr/cra-docker",
     "postdocker:run": "echo \"\\x1b[104m\\x1b[97m\n[ And... closed ]\n\\x1b[0m\"",
-
+    "eslint": "eslint src/. --fix-dry-run --config .eslintrc.json",
+    "eslint:fix": "eslint src/. --fix --config .eslintrc.json",
     "setup:docker": "npm run docker:pull",
-
     "start:docker": "npm run docker:run",
     "start": "react-scripts start",
-
     "watch": "react-scripts start",
     "test": "npm run cypress:run",
     "build": "react-scripts build"
@@ -45,11 +44,15 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@cypress/webpack-preprocessor": "4.1.0",
-    "cypress": "3.6.0",
-    "cypress-dark": "1.7.14",
-    "cypress-eslint-preprocessor": "1.2.2",
-    "cypress-react-unit-test": "2.4.3",
-    "react-testing-library": "7.0.1"
+    "@testing-library/cypress": "^5.0.2",
+    "cypress": "^3.7.0",
+    "cypress-dark": "^1.7.14",
+    "cypress-eslint-preprocessor": "^1.2.2",
+    "cypress-react-unit-test": "^2.4.3",
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "react-testing-library": "^8.0.1",
+    "uuid": "^3.3.3"
   }
 }

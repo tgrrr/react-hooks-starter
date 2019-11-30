@@ -49,8 +49,8 @@ class ErrorBoundary extends PureComponent {
           </div>
         )
         : <div data-cy={componentName} {...rest}>
-            {children}
-          </div>
+          {children}
+        </div>
     );
   }
 }
