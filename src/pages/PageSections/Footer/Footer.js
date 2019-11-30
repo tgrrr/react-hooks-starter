@@ -5,11 +5,9 @@ import ErrorBoundary from '../../../common/ErrorBoundary/ErrorBoundary';
 const Footer = () => (
   <ErrorBoundary componentName='Footer'>
     <FooterStyled>
-      <>
-        <footer>
+      <footer>
           Footer
-        </footer>
-      </>
+      </footer>
     </FooterStyled>
   </ErrorBoundary>
 );
