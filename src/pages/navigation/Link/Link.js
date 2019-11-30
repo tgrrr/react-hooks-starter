@@ -1,7 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-
-import HashLink from 'react-router-hash-link';
+import { Link as RouterLink } from 'react-router-dom';
 
 const isExternal = (url) => window.location.host !== url.host;
 
@@ -12,7 +11,7 @@ const Link = ({
 }) => (
   isExternal(to)
     ? <a className={className} href={to}>{children}</a>
-    : <HashLink className={className} to={to}>{children}</HashLink>
+    : <RouterLink className={className} to={to}>{children}</RouterLink>
 );
 
 Link.propTypes = {
