@@ -1,3 +1,42 @@
+TODO:
+- [ ] Convert to Typescript
+    - [ ] proptypes to typescript
+
+- [ ] Router Authentication is WIP
+- [ ] Check for duplication between page and routes
+
+### Data and State
+
+- [ ] [axios]
+
+### Navigation / Getting around
+
+- [x] [history]
+- [x] [react-router]
+
+### Styles
+
+- [x] [styled-components]
+- [ ] [styled-system]
+- [ ] [@material-ui/core]
+
+### Tests
+
+- [x] [Cypress]
+- [ ] [raven-js]
+- [ ] [rollbar]
+
+### Debugging
+
+- [ ] [eslint]
+- [x] [prop-types]
+
+### Useful
+
+- [ ] [react-notifications-component]
+- [ ] [uuid]
+
+---
 
 https://hub.docker.com/repository/docker/tgrrr/cra-docker
 
@@ -70,7 +109,7 @@ Runs the app in the development mode at
 
 Run cypress tests in terminal
 
-## Deploy TODO:
+## Deploy - WIP
 
 - `yarn run build` for production
 - [Deployment](https://facebook.github.io/create-react-app/docs/deployment)
@@ -80,38 +119,7 @@ Run cypress tests in terminal
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 - [Making a Progressive Web App](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-
-## And a few added extras:
-
-TODO:
-
-### Data and State
-- [ ] [axios]
-- [ ] [react-hooks-global-state]
-
-### Getting around
-- [ ] [history]
-- [ ] [react-router]
-
-### Styles
-- [ ] [@material-ui/core]
-- [ ] [styled-components]
-- [ ] [styled-system]
-
-### Tests
-- [x] [Cypress]
-- [ ] [raven-js]
-- [ ] [rollbar]
-
-### Debugging
-- [ ] [eslint]
-- [x] [prop-types]
-- [ ] [react-fix-it]
-- [ ] [why-did-you-update]
-
-### Useful
-- [ ] [react-notifications-component]
-- [ ] [uuid]
+##### And a few added extras:
 
 [axios]: https://www.npmjs.com/package/axios
 [react-hooks-global-state]: https://www.npmjs.com/package/react-hooks-global-state

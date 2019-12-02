@@ -13,12 +13,19 @@ const Main = () => (
       <main>
         <Switch>
           {routes.map((route, index) => (
-            <Route
-              component={route.main}
-              exact={route.exact}
-              key={index}
-              path={route.path}
-            />
+            route.private
+              ? <RoutePrivate
+                component={route.main}
+                exact={route.exact}
+                key={index}
+                path={route.path}
+              />
+              : <RoutePublic
+                component={route.main}
+                exact={route.exact}
+                key={index}
+                path={route.path}
+              />
           ))}
         </Switch>
       </main>
