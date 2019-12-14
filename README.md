@@ -3,7 +3,19 @@ TODO:
     - [ ] proptypes to typescript
 
 - [ ] Router Authentication is WIP
+  See: https://blog.logrocket.com/how-react-hooks-can-replace-react-router/
 - [ ] Check for duplication between page and routes
+- [ ] Sharable links that are SEO Canonical routes with React Helmet 
+  See:
+  - SEO Canonical routes with Helmet](https://www.creativebloq.com/how-to/build-an-seo-friendly-head-component-for-nextjsreact)
+  - [Head component](https://www.creativebloq.com/how-to/build-an-seo-friendly-head-component-for-nextjsreact)
+  - [URL parameters tool](https://support.google.com/webmasters/answer/6080548?hl=en&visit_id=637118065178371086-1815002449&rd=1)
+  - [Google campaign builder](https://ga-dev-tools.appspot.com/campaign-url-builder/)
+  - https://web.utm.io/
+  - https://effinamazing.com/blog/manual-utm-tagging-vs-adwords-autotagging/
+  - https://easyautotagging.com/features/
+  - INTERNAL TRACKING: https://www.smashingmagazine.com/2017/08/tracking-internal-marketing-campaigns-google-analytics/
+  - Tracking with only CSS
 
 ### Data and State
 
@@ -114,6 +126,35 @@ Run cypress tests in terminal
 - `yarn run build` for production
 - [Deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+### Netlify
+
+```bash
+$ netlify init
+$ netlify build
+$ netlify deploy
+```
+
+this adds the id to `.netlify/state.json`, but I prefer my config in a single file where possible.
+
+1. Add project id:
+
+```yaml
+# netlify.toml
+[Settings]
+  ID = "TODO"
+```
+
+2. Set homepage blank
+
+```json
+// package.json
+"homepage": "."
+```
+
+and 
+
+3. Add  `/*  /index.html  200` to  `public/_redirects`
+
 ### Reference
 
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
@@ -141,3 +182,4 @@ Run cypress tests in terminal
 
 [react-notifications-component]: https://www.npmjs.com/package/react-notifications-component
 [uuid]: https://www.npmjs.com/package/uuid
+
